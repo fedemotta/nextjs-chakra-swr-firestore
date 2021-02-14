@@ -1,8 +1,7 @@
 import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react';
 import 'firebase/firestore';
 import 'firebase/auth';
-import FuegoProvider from '@nandorojo/swr-firestore';
-import Fuego from '../config/Fuego';
+import { FuegoProvider, Fuego } from '@nandorojo/swr-firestore';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_PUBLIC_API_KEY,
@@ -20,17 +19,17 @@ import theme from '../theme';
 
 function MyApp({ pageProps, Component }) {
   return (
-    //<FuegoProvider fuego={fuego}>
-    <ChakraProvider resetCSS theme={theme}>
-      <ColorModeProvider
-        options={{
-          useSystemColorMode: true,
-        }}
-      >
-        <Component {...pageProps} />
-      </ColorModeProvider>
-    </ChakraProvider>
-    //</FuegoProvider>
+    <FuegoProvider fuego={fuego}>
+      <ChakraProvider resetCSS theme={theme}>
+        <ColorModeProvider
+          options={{
+            useSystemColorMode: true,
+          }}
+        >
+          <Component {...pageProps} />
+        </ColorModeProvider>
+      </ChakraProvider>
+    </FuegoProvider>
   );
 }
 
