@@ -1,4 +1,16 @@
-import { Link as ChakraLink, Text, Avatar, Wrap, WrapItem, List, ListIcon, ListItem } from '@chakra-ui/react';
+import {
+  Link as ChakraLink,
+  Text,
+  Avatar,
+  Wrap,
+  WrapItem,
+  List,
+  ListIcon,
+  ListItem,
+  Code,
+  UnorderedList,
+  Divider,
+} from '@chakra-ui/react';
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons';
 import { Hero } from '../components/Hero';
 import { Container } from '../components/Container';
@@ -6,9 +18,9 @@ import { Main } from '../components/Main';
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
-import { useCollection } from '@nandorojo/swr-firestore';
+import { useCollection, useDocument } from '@nandorojo/swr-firestore';
 
-function getUsers() {
+const userAvatars = () => {
   const { data, update, error } = useCollection(`users`);
 
   if (error)
@@ -25,18 +37,39 @@ function getUsers() {
     );
 
   const users = data.map((user) => (
-    <WrapItem>
-      <Avatar key={user.id} name={user.name} src={user.avatar} />
+    <WrapItem key={user.id}>
+      <Avatar name={user.name} src={user.avatar} />
     </WrapItem>
   ));
   return <Wrap>{users}</Wrap>;
-}
+};
+const userCodeName = (value) => {
+  const user = { id: value };
+  const { data, update, error } = useDocument(`users/${user.id}`, {
+    listen: true,
+  });
+
+  if (error) return <Code colorScheme="red">Error!</Code>;
+  if (!data) return <Code colorScheme="yellow">Loading...</Code>;
+
+  return <Code colorScheme="green">Name: {data.name}</Code>;
+};
+
 const Index = () => (
-  <Container height="100vh">
+  <Container height="110vh">
     <Hero />
     <Main>
-      <Text>Users collection created in Firestore:</Text>
-      {getUsers()}
+      <Divider />
+      <UnorderedList>
+        <ListItem>
+          <Text>Get the Users collection from Firestore:</Text>
+          {userAvatars()}
+        </ListItem>
+        <ListItem>
+          <Text>Subscribe to a specific User document from Firestore:</Text>
+          {userCodeName('c7skcokGr24yDNwVcpJy')}
+        </ListItem>
+      </UnorderedList>
 
       <List spacing={3} my={0}>
         <ListItem>
