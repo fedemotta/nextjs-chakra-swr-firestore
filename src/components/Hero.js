@@ -7,5 +7,5 @@ export const Hero = ({ title }) => (
 );
 
 Hero.defaultProps = {
-  title: '"Chackra UI" and "SWR + Firestore" example',
+  title: 'rose-crud',
 };

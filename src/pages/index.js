@@ -1,4 +1,4 @@
-import { Link as ChakraLink, Text, Avatar, Wrap, WrapItem, Code, List, ListIcon, ListItem } from '@chakra-ui/react';
+import { Link as ChakraLink, Text, Avatar, Wrap, WrapItem, List, ListIcon, ListItem } from '@chakra-ui/react';
 import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons';
 import { Hero } from '../components/Hero';
 import { Container } from '../components/Container';
@@ -47,6 +47,12 @@ const Index = () => (
         </ListItem>
         <ListItem>
           <ListIcon as={CheckCircleIcon} color="green.500" />
+          <ChakraLink isExternal href="https://github.com/nandorojo/swr-firestore" flexGrow={1} mr={2}>
+            SWR + Firestore <LinkIcon />
+          </ChakraLink>
+        </ListItem>
+        <ListItem>
+          <ListIcon as={CheckCircleIcon} color="green.500" />
           <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
             Next.js <LinkIcon />
           </ChakraLink>
@@ -56,7 +62,7 @@ const Index = () => (
 
     <DarkModeSwitch />
     <Footer>
-      <Text>Next ❤️ Chakra</Text>
+      <Text>Next ❤️ Chakra ⚡ SWR 🔥 Firestore</Text>
     </Footer>
     <CTA />
   </Container>
