@@ -1,5 +1,5 @@
 {
-  "name": "with-chakra-ui",
+  "name": "rose-crud",
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
