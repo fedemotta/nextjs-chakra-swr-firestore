@@ -2,7 +2,7 @@ import { FormErrorMessage, FormControl, FormLabel, Input, Button, ButtonGroup } 
 import { useCollection } from '@nandorojo/swr-firestore';
 import { useState } from 'react';
 
-const NewUser = () => {
+const UserCreate = () => {
   const { data, add } = useCollection('users', {
     orderBy: ['name', 'asc'],
   });
@@ -80,4 +80,4 @@ const NewUser = () => {
   );
 };
 
-export default NewUser;
+export default UserCreate;

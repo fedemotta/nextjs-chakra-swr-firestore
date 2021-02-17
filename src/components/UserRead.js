@@ -1,7 +1,7 @@
 import { Text, Avatar, Wrap, WrapItem } from '@chakra-ui/react';
 import { useCollection } from '@nandorojo/swr-firestore';
 
-const Avatars = ({ collection }) => {
+const Users = ({ collection }) => {
   const { data, update, error } = useCollection(collection, {
     listen: true,
   });
@@ -26,4 +26,4 @@ const Avatars = ({ collection }) => {
   ));
   return <Wrap>{users}</Wrap>;
 };
-export default Avatars;
+export default Users;

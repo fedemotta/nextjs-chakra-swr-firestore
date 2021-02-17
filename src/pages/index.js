@@ -6,10 +6,10 @@ import { Main } from '../components/Main';
 import { DarkModeSwitch } from '../components/DarkModeSwitch';
 import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
-import Avatars from '../components/Avatars';
-import UserName from '../components/UserName';
-import NewUser from '../components/NewUser';
-import DeleteUser from '../components/DeleteUser';
+import Users from '../components/UserRead';
+import UserUpdate from '../components/UserUpdate';
+import UserCreate from '../components/UserCreate';
+import UserDelete from '../components/UserDelete';
 
 const Index = () => (
   <Container height="180vh">
@@ -19,19 +19,19 @@ const Index = () => (
       <UnorderedList>
         <ListItem>
           <Text>Get the Users collection from Firestore</Text>
-          <Avatars collection={'users'} />
+          <Users collection={'users'} />
         </ListItem>
         <ListItem>
-          <Text>Subscribe to a specific User document from Firestore</Text>
-          <UserName index={'c7skcokGr24yDNwVcpJy'} />
+          <Text>Edit a specific user in Firestore</Text>
+          <UserUpdate index={'c7skcokGr24yDNwVcpJy'} />
         </ListItem>
         <ListItem>
           <Text>Add a new User into Firestore</Text>
-          <NewUser />
+          <UserCreate />
         </ListItem>
         <ListItem>
-          <Text>Delete a User from Firestore</Text>
-          <DeleteUser />
+          <Text>Delete a specific User from Firestore</Text>
+          <UserDelete />
         </ListItem>
       </UnorderedList>
 

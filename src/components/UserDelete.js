@@ -2,7 +2,7 @@ import { FormErrorMessage, FormControl, FormLabel, Select, Button, ButtonGroup }
 import { useCollection, deleteDocument } from '@nandorojo/swr-firestore';
 import { useState } from 'react';
 
-const DeleteUser = () => {
+const UserDelete = () => {
   const { data, update, error } = useCollection('users', {
     orderBy: ['name', 'asc'],
   });
@@ -84,4 +84,4 @@ const DeleteUser = () => {
   );
 };
 
-export default DeleteUser;
+export default UserDelete;
