@@ -8,20 +8,25 @@ import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
 import Avatars from '../components/Avatars';
 import UserName from '../components/UserName';
+import NewUser from '../components/NewUser';
 
 const Index = () => (
-  <Container height="110vh">
+  <Container height="180vh">
     <Hero />
     <Main>
       <Divider />
       <UnorderedList>
         <ListItem>
-          <Text>Get the Users collection from Firestore:</Text>
+          <Text>Get the Users collection from Firestore</Text>
           <Avatars collection={'users'} />
         </ListItem>
         <ListItem>
-          <Text>Subscribe to a specific User document from Firestore:</Text>
+          <Text>Subscribe to a specific User document from Firestore</Text>
           <UserName index={'c7skcokGr24yDNwVcpJy'} />
+        </ListItem>
+        <ListItem>
+          <Text>Add a new User into Firestore</Text>
+          <NewUser />
         </ListItem>
       </UnorderedList>
 
