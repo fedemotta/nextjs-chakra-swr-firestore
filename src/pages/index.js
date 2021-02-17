@@ -9,6 +9,7 @@ import { Footer } from '../components/Footer';
 import Avatars from '../components/Avatars';
 import UserName from '../components/UserName';
 import NewUser from '../components/NewUser';
+import DeleteUser from '../components/DeleteUser';
 
 const Index = () => (
   <Container height="180vh">
@@ -27,6 +28,10 @@ const Index = () => (
         <ListItem>
           <Text>Add a new User into Firestore</Text>
           <NewUser />
+        </ListItem>
+        <ListItem>
+          <Text>Delete a User from Firestore</Text>
+          <DeleteUser />
         </ListItem>
       </UnorderedList>
 
