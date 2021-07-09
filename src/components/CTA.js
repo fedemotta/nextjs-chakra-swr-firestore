@@ -15,7 +15,7 @@ export const CTA = () => (
       </Button>
     </ChakraLink>
 
-    <ChakraLink isExternal href="https://github.com/fedemotta/rose-crud" flexGrow={3} mx={2}>
+    <ChakraLink isExternal href="https://github.com/fedemotta/nextjs-chakra-swr-firestore" flexGrow={3} mx={2}>
       <Button width="100%" variant="solid" variantcolor="green">
         View Repo
       </Button>
