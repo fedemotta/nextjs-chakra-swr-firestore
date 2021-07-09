@@ -1,6 +1,6 @@
-# Rose Crud
+# Example with Chakra + SWR + Firestore  
 
-This is the Rose Crud app using swr-firestore.
+This is a NextJS app built with Chakra using swr-firestore.
 
 ## How to use
 
@@ -20,4 +20,4 @@ When trying to run `yarn start` it will build and export your pages into the `ou
 
 ### For production:
 
-There is a Github CI pipeline running on the main branch. This is deploying to vercel `https://rose-crud.vercel.app`
+There is a Github CI pipeline running on the main branch. This is deploying to vercel `https://nextjs-chakra-swr-firestore.vercel.app`
