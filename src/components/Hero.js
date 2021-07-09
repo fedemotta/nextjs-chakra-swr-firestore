@@ -7,5 +7,5 @@ export const Hero = ({ title }) => (
 );
 
 Hero.defaultProps = {
-  title: 'rose-crud',
+  title: 'nextjs-chakra-swr-firestore',
 };
