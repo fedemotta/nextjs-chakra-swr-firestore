@@ -1,5 +1,5 @@
 {
-  "name": "rose-crud",
+  "name": "nextjs-chakra-swr-firestore",
   "version": "0.1.0",
   "scripts": {
     "dev": "next dev",
